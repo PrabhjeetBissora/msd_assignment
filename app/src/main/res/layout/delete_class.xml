@@ -15,7 +15,7 @@
             android:id="@+id/delete_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete Class"
+            android:text="@string/delete_class"
             app:layout_constraintBottom_toTopOf="@id/textview_second"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

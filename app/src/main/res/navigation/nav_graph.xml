@@ -27,7 +27,6 @@
     </fragment>
     <fragment
         android:id="@+id/ScheduleClass"
-        android:name="com.example.msd_assignment.DeleteClass"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/delete_class">
 

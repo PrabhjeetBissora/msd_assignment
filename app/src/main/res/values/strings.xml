@@ -46,4 +46,7 @@
 
     <!-- only way to use backspaces -->
     <string name="class_params">Class code:\nClass name:\nClass type:\nStart time:\nEnd time:\nLocation:</string>
+    <string name="schedule_class">Schedule Class</string>
+    <string name="delete_class">Delete Class</string>
+    <string name="add_class">Add Class</string>
 </resources>
