@@ -43,4 +43,7 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+
+    <!-- only way to use backspaces -->
+    <string name="class_params">Class code:\nClass name:\nClass type:\nStart time:\nEnd time:\nLocation:</string>
 </resources>
