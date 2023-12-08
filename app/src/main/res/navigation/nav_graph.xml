@@ -7,12 +7,11 @@
 
     <fragment
         android:id="@+id/AddClass"
-        android:name="com.example.msd_assignment.AddClass"
+        android:name="com.example.msd_assignment.ScheduleClass"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/add_class">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_AddClass_to_DeleteClass"
             app:destination="@id/DeleteClass" />
     </fragment>
     <fragment
@@ -20,16 +19,17 @@
         android:name="com.example.msd_assignment.DeleteClass"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/delete_class">
-
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/AddClass" />
+            android:id="@+id/action_DeleteClass_to_ScheduleClass"
+            app:destination="@id/ScheduleClass" />
     </fragment>
     <fragment
         android:id="@+id/ScheduleClass"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/delete_class">
-
+        <action
+            android:id="@+id/action_ScheduleClass_to_AddClass"
+            app:destination="@id/AddClass" />
     </fragment>
 
 </navigation>
