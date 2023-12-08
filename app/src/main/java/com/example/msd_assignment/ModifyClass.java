@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.msd_assignment.databinding.ScheduleClassBinding;
+import com.example.msd_assignment.databinding.ModifyClassBinding;
 
-public class ScheduleClass extends Fragment {
+public class ModifyClass extends Fragment {
 
-    private ScheduleClassBinding binding;
+    private ModifyClassBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class ScheduleClass extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = ScheduleClassBinding.inflate(inflater, container, false);
+        binding = ModifyClassBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -32,7 +32,7 @@ public class ScheduleClass extends Fragment {
         binding.scheduleClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ScheduleClass.this)
+                NavHostFragment.findNavController(ModifyClass.this)
                         .navigate(R.id.action_ScheduleClass_to_AddClass);
             }
         });

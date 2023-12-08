@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/AddClass"
-        android:name="com.example.msd_assignment.ScheduleClass"
+        android:name="com.example.msd_assignment.ModifyClass"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/add_class">
         <action

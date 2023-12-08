@@ -1,6 +1,5 @@
 package com.example.msd_assignment;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -19,9 +18,7 @@ import com.example.msd_assignment.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,32 +38,8 @@ public class MainActivity extends AppCompatActivity {
 //        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        // Title of application
         TextView textView = (TextView)findViewById(R.id.welcomeTitle);
-        textView.setText("Welcome to Classify!"); //set text for text view
-
-        // Declare buttons
-        Button addButton = (Button)findViewById(R.id.addButton);
-        Button deleteButton = (Button)findViewById(R.id.deleteButton);
-        Button scheduleButton = (Button)findViewById(R.id.scheduleButton);
-
-        // Add Button
-        // when user tap on the button
-        if (addButton != null) {
-            addButton.setOnClickListener((View.OnClickListener)(new
-             View.OnClickListener() {
-//                 public void onClick(View it) {
-//                     // displaying a toast message
-//                     Toast.makeText((Context) MainActivity.this, "You just clicked addButton", Toast.LENGTH_LONG).show();
-//                 }
-
-                 @Override
-                 public void onClick(View it) {
-                     // displaying a toast message
-                     Toast.makeText((Context) MainActivity.this, "You just clicked addButton", Toast.LENGTH_LONG).show();
-                 }
-             }));
-        }
+        // textView.setText("AbhiAndroid"); //set text for text view
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
