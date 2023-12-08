@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView)findViewById(R.id.welcomeTitle);
         // textView.setText("AbhiAndroid"); //set text for text view
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
-            }
-        });
+//        binding.fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAnchorView(R.id.fab)
+//                        .setAction("Action", null).show();
+//            }
+//        });
     }
 
     @Override
