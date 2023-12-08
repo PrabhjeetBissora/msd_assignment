@@ -33,7 +33,7 @@ public class DeleteClass extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DeleteClass.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(R.id.action_DeleteClass_to_ScheduleClass);
             }
         });
     }

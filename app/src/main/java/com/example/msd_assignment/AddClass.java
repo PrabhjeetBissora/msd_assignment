@@ -33,7 +33,7 @@ public class AddClass extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(AddClass.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                        .navigate(R.id.action_AddClass_to_DeleteClass);
             }
         });
     }
