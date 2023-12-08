@@ -10,10 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.msd_assignment.databinding.ModifyClassBinding;
+import com.example.msd_assignment.databinding.ViewClassBinding;
 
 public class ViewClass extends Fragment {
 
-    private ModifyClassBinding binding;
+    private ViewClassBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +22,7 @@ public class ViewClass extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = ModifyClassBinding.inflate(inflater, container, false);
+        binding = ViewClassBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,7 +30,7 @@ public class ViewClass extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.scheduleClass.setOnClickListener(new View.OnClickListener() {
+        binding.viewClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ViewClass.this)

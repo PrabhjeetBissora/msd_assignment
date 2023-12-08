@@ -10,7 +10,7 @@
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Class"
+        android:text="@string/add_class"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,25 +20,35 @@
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="Delete Class"
+        android:layout_marginTop="68dp"
+        android:text="@string/delete_class"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton" />
 
     <Button
-        android:id="@+id/scheduleButton"
+        android:id="@+id/modifyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modify Class"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/modify_class"
+        app:layout_constraintBottom_toTopOf="@+id/viewButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deleteButton" />
 
+    <Button
+        android:id="@+id/viewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_class"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/welcomeTitle"
-        android:text="20sp"
+        android:text="Welcome to Class Scheduler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/addButton"

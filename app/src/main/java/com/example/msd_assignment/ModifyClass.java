@@ -29,7 +29,7 @@ public class ModifyClass extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.scheduleClass.setOnClickListener(new View.OnClickListener() {
+        binding.modifyClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ModifyClass.this)

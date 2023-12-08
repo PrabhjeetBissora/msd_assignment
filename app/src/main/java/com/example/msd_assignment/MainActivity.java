@@ -1,5 +1,6 @@
 package com.example.msd_assignment;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -20,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.content_main);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -46,10 +48,50 @@ public class MainActivity extends AppCompatActivity {
         // textView.setText("AbhiAndroid"); //set text for text view
 
         // declare buttons in main page
-        Button addButton = (Button)findViewById(R.id.add_class);
-        Button deleteButton = (Button)findViewById(R.id.delete_class);
-        Button modifyButton = (Button)findViewById(R.id.modify_class);
-        Button viewButton = (Button)findViewById(R.id.view_class);
+        Button addButton = (Button)findViewById(R.id.addButton);
+        Button deleteButton = (Button)findViewById(R.id.deleteButton);
+        Button modifyButton = (Button)findViewById(R.id.modifyButton);
+        Button viewButton = (Button)findViewById(R.id.viewButton);
+
+        // direct to add page
+        if (addButton != null) {
+            addButton.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                public final void onClick(View it) {
+                    // displaying a toast message
+                    Toast.makeText((Context) MainActivity.this, "You just clicked on Add Button", Toast.LENGTH_LONG).show();
+                }
+            }));
+        }
+
+        // direct to delete page
+        if (deleteButton != null) {
+            deleteButton.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                public final void onClick(View it) {
+                    // displaying a toast message
+                    Toast.makeText((Context) MainActivity.this, "You just clicked on Delete Button", Toast.LENGTH_LONG).show();
+                }
+            }));
+        }
+
+        // direct to modify page
+        if (modifyButton != null) {
+            modifyButton.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                public final void onClick(View it) {
+                    // displaying a toast message
+                    Toast.makeText((Context) MainActivity.this, "You just clicked on Modify Button", Toast.LENGTH_LONG).show();
+                }
+            }));
+        }
+
+        // direct to view page
+        if (viewButton != null) {
+            viewButton.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                public final void onClick(View it) {
+                    // displaying a toast message
+                    Toast.makeText((Context) MainActivity.this, "You just clicked on View Button", Toast.LENGTH_LONG).show();
+                }
+            }));
+        }
 
 //        binding.fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
