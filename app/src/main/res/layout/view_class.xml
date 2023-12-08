@@ -15,7 +15,7 @@
             android:id="@+id/schedule_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/modify_class"
+            android:text="@string/view_class"
             app:layout_constraintBottom_toTopOf="@id/textview_third"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
