@@ -31,20 +31,11 @@ public class AddClass extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ArrayList<String> params = new ArrayList<String>(); // Create an ArrayList object
-
         binding.addClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//              NavHostFragment.findNavController(AddClass.this)
-//                        .navigate(R.id.action_AddClass_to_DeleteClass);
-
-                for(int i = 0; i < params.size(); i++){
-                    if (params.get(i) == null){
-                        return;
-                    }
-                }
-
+                NavHostFragment.findNavController(AddClass.this)
+                        .navigate(R.id.action_AddClass_to_DeleteClass);
             }
         });
     }

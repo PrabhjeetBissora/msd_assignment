@@ -50,4 +50,5 @@
     <string name="add_class">Add Class</string>
     <string name="modify_class">Modify Class</string>
     <string name="view_class">View Class</string>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>

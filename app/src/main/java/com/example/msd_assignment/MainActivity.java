@@ -1,6 +1,7 @@
 package com.example.msd_assignment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 public final void onClick(View it) {
                     // displaying a toast message
                     Toast.makeText((Context) MainActivity.this, "You just clicked on Add Button", Toast.LENGTH_LONG).show();
+                    openAddActivity();
                 }
             }));
         }
@@ -123,6 +125,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    // go to add class page. Retrieved from: https://www.youtube.com/watch?v=bgIUdb-7Rqo
+    public void openAddActivity() {
+        //Toast.makeText((Context) MainActivity.this, "You just clicked on Add Button", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, DeleteClass.class);
+        startActivity(intent);
     }
 
 //    @Override
