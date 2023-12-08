@@ -12,7 +12,7 @@
         android:padding="16dp">
 
         <Button
-            android:id="@+id/schedule_class"
+            android:id="@+id/modify_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/modify_class"
@@ -30,6 +30,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/schedule_class" />
+            app:layout_constraintTop_toBottomOf="@id/modify_class" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

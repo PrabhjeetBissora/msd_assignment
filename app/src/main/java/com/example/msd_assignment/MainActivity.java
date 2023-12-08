@@ -18,6 +18,7 @@ import com.example.msd_assignment.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.activity_main);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -38,8 +41,15 @@ public class MainActivity extends AppCompatActivity {
 //        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
+        // declare title of applictaion
         TextView textView = (TextView)findViewById(R.id.welcomeTitle);
         // textView.setText("AbhiAndroid"); //set text for text view
+
+        // declare buttons in main page
+        Button addButton = (Button)findViewById(R.id.add_class);
+        Button deleteButton = (Button)findViewById(R.id.delete_class);
+        Button modifyButton = (Button)findViewById(R.id.modify_class);
+        Button viewButton = (Button)findViewById(R.id.view_class);
 
 //        binding.fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
