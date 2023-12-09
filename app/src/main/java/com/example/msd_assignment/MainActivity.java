@@ -60,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 public final void onClick(View it) {
                     // displaying a toast message
                     Toast.makeText((Context) MainActivity.this, "You just clicked on Add Button", Toast.LENGTH_LONG).show();
-                    openAddActivity();
+                    //openAddActivity();
+                    // Navigate to the AddClass fragment using the Navigation component
+                    NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_graph);
+                    navController.navigate(R.id.action_MainActivity_to_AddClass);
                 }
             }));
         }
@@ -130,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
     // go to add class page. Retrieved from: https://www.youtube.com/watch?v=bgIUdb-7Rqo
     public void openAddActivity() {
         //Toast.makeText((Context) MainActivity.this, "You just clicked on Add Button", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, DeleteClass.class);
+        Intent intent = new Intent(this, AddClass.class);
         startActivity(intent);
     }
 
