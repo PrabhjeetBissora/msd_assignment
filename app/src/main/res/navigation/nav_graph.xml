@@ -7,35 +7,36 @@
 
     <fragment
         android:id="@+id/MainActivity"
-        android:name="com.example.msd_assignment.ModifyClass"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/content_main">
+        android:label="@string/main_activity_label">
         <action
             android:id="@+id/action_MainActivity_to_AddClass"
             app:destination="@id/AddClass" />
     </fragment>
     <fragment
         android:id="@+id/AddClass"
-        android:name="com.example.msd_assignment.ModifyClass"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/add_class">
+        android:label="@string/add_class_label">
         <action
             android:id="@+id/action_AddClass_to_DeleteClass"
             app:destination="@id/DeleteClass" />
     </fragment>
     <fragment
         android:id="@+id/DeleteClass"
-        android:name="com.example.msd_assignment.DeleteClass"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/delete_class">
+        android:label="@string/delete_class_label">
         <action
-            android:id="@+id/action_DeleteClass_to_ScheduleClass"
-            app:destination="@id/ScheduleClass" />
+            android:id="@+id/action_DeleteClass_to_ModifyClass"
+            app:destination="@id/ModifyClass" />
     </fragment>
     <fragment
-        android:id="@+id/ScheduleClass"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/delete_class">
+        android:id="@+id/ModifyClass"
+        android:label="@string/modify_class_label">
+        <action
+            android:id="@+id/action_ScheduleClass_to_AddClass"
+            app:destination="@id/AddClass" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ViewClass"
+        android:label="@string/view_class_label">
         <action
             android:id="@+id/action_ScheduleClass_to_AddClass"
             app:destination="@id/AddClass" />

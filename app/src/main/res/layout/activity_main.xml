@@ -19,6 +19,15 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- retrieved from: https://abhiandroid.com/ui/fragment#gsc.tab=0-->
+
+    <FrameLayout
+        android:id="@+id/nav_host_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
     <include layout="@layout/content_main" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

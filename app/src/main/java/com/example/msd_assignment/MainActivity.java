@@ -8,11 +8,16 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.core.view.WindowCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -24,6 +29,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+// import android.support.design.widget.NavigationView;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
@@ -33,12 +40,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.activity_main);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.toolbar);
+        // setSupportActionBar(binding.toolbar);
+
+        // retrieved from: https://stackoverflow.com/questions/62061386/illegalargumentexception-id-does-not-reference-a-view-inside-this-activity
+
+//        val navHostFragment =
+//                supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)
+//        as NavHostFragment
+//        // Passing each menu ID as a set of Ids because each
+//        // menu should be considered as top level destinations.
+//        mNavController = navHostFragment.navController
+
+        // Find the NavHostFragment
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_container);
+
+        if (navHostFragment != null) {
+
+            // Get the NavController from the NavHostFragment
+            NavController navController = navHostFragment.getNavController();
+        }
+        else{
+            Log.e("MainActivity", "NavHostFragment is null");
+        }
 
 //        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
 //        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
@@ -57,13 +85,27 @@ public class MainActivity extends AppCompatActivity {
         // direct to add page
         if (addButton != null) {
             addButton.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
-                public final void onClick(View it) {
+                public void onClick(View it) {
                     // displaying a toast message
                     Toast.makeText((Context) MainActivity.this, "You just clicked on Add Button", Toast.LENGTH_LONG).show();
                     //openAddActivity();
                     // Navigate to the AddClass fragment using the Navigation component
-                    NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_graph);
-                    navController.navigate(R.id.action_MainActivity_to_AddClass);
+
+                    //NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_container);
+                    //navController.navigate(R.id.action_MainActivity_to_AddClass);
+
+                    // referenced from: https://developer.android.com/reference/android/app/FragmentTransaction
+
+//                    Intent intent = new Intent(MainActivity.this, AddClass.class);
+//                    startActivity(intent);
+                    // In your MainActivity or wherever you are navigating
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+// Replace the current fragment with AddClass fragment
+                    fragmentTransaction.replace(R.id.nav_host_container, new AddClass());
+                    fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
+                    fragmentTransaction.commit();
                 }
             }));
         }
