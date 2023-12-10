@@ -96,13 +96,15 @@ public class MainActivity extends AppCompatActivity {
 
                     // referenced from: https://developer.android.com/reference/android/app/FragmentTransaction
 
-//                    Intent intent = new Intent(MainActivity.this, AddClass.class);
-//                    startActivity(intent);
-                    // In your MainActivity or wherever you are navigating
+                    // Create FragmentManager to navigate to fragment
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-// Replace the current fragment with AddClass fragment
+                    // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
+                    addButton.setVisibility(View.GONE);
+                    addButton.setClickable(false);
+
+                    // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new AddClass());
                     fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
                     fragmentTransaction.commit();
@@ -116,6 +118,15 @@ public class MainActivity extends AppCompatActivity {
                 public final void onClick(View it) {
                     // displaying a toast message
                     Toast.makeText((Context) MainActivity.this, "You just clicked on Delete Button", Toast.LENGTH_LONG).show();
+
+                    // Create FragmentManager to navigate to fragment
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                    // Replace the current fragment with AddClass fragment
+                    fragmentTransaction.replace(R.id.nav_host_container, new DeleteClass());
+                    fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
+                    fragmentTransaction.commit();
                 }
             }));
         }
@@ -126,6 +137,15 @@ public class MainActivity extends AppCompatActivity {
                 public final void onClick(View it) {
                     // displaying a toast message
                     Toast.makeText((Context) MainActivity.this, "You just clicked on Modify Button", Toast.LENGTH_LONG).show();
+
+                    // Create FragmentManager to navigate to fragment
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                    // Replace the current fragment with AddClass fragment
+                    fragmentTransaction.replace(R.id.nav_host_container, new ModifyClass());
+                    fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
+                    fragmentTransaction.commit();
                 }
             }));
         }
@@ -136,6 +156,15 @@ public class MainActivity extends AppCompatActivity {
                 public final void onClick(View it) {
                     // displaying a toast message
                     Toast.makeText((Context) MainActivity.this, "You just clicked on View Button", Toast.LENGTH_LONG).show();
+
+                    // Create FragmentManager to navigate to fragment
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                    // Replace the current fragment with AddClass fragment
+                    fragmentTransaction.replace(R.id.nav_host_container, new ViewClass());
+                    fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
+                    fragmentTransaction.commit();
                 }
             }));
         }
