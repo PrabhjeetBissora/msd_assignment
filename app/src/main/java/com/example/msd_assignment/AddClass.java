@@ -1,12 +1,18 @@
 package com.example.msd_assignment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.msd_assignment.databinding.AddClassBinding;
@@ -31,13 +37,33 @@ public class AddClass extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // declare title of applictaion
+        TextView textView = view.findViewById(R.id.textview_first);
+        // textView.setText("AbhiAndroid"); //set text for text view
+
+        // declare buttons in main page
+        Button addButton = view.findViewById(R.id.add_class);
+
+        if (addButton != null) {
+            addButton.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                public void onClick(View it) {
+                    // displaying a toast message - using requireContext() instead of typecasting Context
+                    Toast.makeText(requireContext(), "You just clicked on Add Button", Toast.LENGTH_LONG).show();
+//                    NavHostFragment.findNavController(AddClass.this)
+//                            .navigate(R.id.action_AddClass_to_DeleteClass);
+                }
+            }));
+        }
+
         binding.addClass.setOnClickListener(new View.OnClickListener() {
-            @Override
+
+            @Override // when button is clicked
             public void onClick(View view) {
-                NavHostFragment.findNavController(AddClass.this)
-                        .navigate(R.id.action_AddClass_to_DeleteClass);
+                Toast.makeText(requireContext(), "You just clicked on Add Button", Toast.LENGTH_LONG).show();
+
             }
         });
+
     }
 
     @Override

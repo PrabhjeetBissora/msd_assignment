@@ -73,14 +73,14 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         // declare title of applictaion
-        TextView textView = (TextView)findViewById(R.id.welcomeTitle);
+        TextView textView = findViewById(R.id.welcomeTitle);
         // textView.setText("AbhiAndroid"); //set text for text view
 
         // declare buttons in main page
-        Button addButton = (Button)findViewById(R.id.addButton);
-        Button deleteButton = (Button)findViewById(R.id.deleteButton);
-        Button modifyButton = (Button)findViewById(R.id.modifyButton);
-        Button viewButton = (Button)findViewById(R.id.viewButton);
+        Button addButton = findViewById(R.id.addButton);
+        Button deleteButton = findViewById(R.id.deleteButton);
+        Button modifyButton = findViewById(R.id.modifyButton);
+        Button viewButton = findViewById(R.id.viewButton);
 
         // direct to add page
         if (addButton != null) {

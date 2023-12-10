@@ -56,4 +56,5 @@
     <string name="delete_class_label">Delete Class</string>
     <string name="modify_class_label">Modify Class</string>
     <string name="view_class_label">View Class</string>
+    <string name="edit_text_name">Input values:</string>
 </resources>
