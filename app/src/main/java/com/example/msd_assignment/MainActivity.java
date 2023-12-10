@@ -103,6 +103,13 @@ public class MainActivity extends AppCompatActivity {
                     // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
                     addButton.setVisibility(View.GONE);
                     addButton.setClickable(false);
+                    deleteButton.setVisibility(View.GONE);
+                    deleteButton.setClickable(false);
+                    modifyButton.setVisibility(View.GONE);
+                    modifyButton.setClickable(false);
+                    viewButton.setVisibility(View.GONE);
+                    viewButton.setClickable(false);
+                    textView.setVisibility(View.GONE);
 
                     // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new AddClass());
@@ -123,6 +130,17 @@ public class MainActivity extends AppCompatActivity {
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+                    // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
+                    addButton.setVisibility(View.GONE);
+                    addButton.setClickable(false);
+                    deleteButton.setVisibility(View.GONE);
+                    deleteButton.setClickable(false);
+                    modifyButton.setVisibility(View.GONE);
+                    modifyButton.setClickable(false);
+                    viewButton.setVisibility(View.GONE);
+                    viewButton.setClickable(false);
+                    textView.setVisibility(View.GONE);
+
                     // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new DeleteClass());
                     fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
@@ -141,6 +159,17 @@ public class MainActivity extends AppCompatActivity {
                     // Create FragmentManager to navigate to fragment
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                    // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
+                    addButton.setVisibility(View.GONE);
+                    addButton.setClickable(false);
+                    deleteButton.setVisibility(View.GONE);
+                    deleteButton.setClickable(false);
+                    modifyButton.setVisibility(View.GONE);
+                    modifyButton.setClickable(false);
+                    viewButton.setVisibility(View.GONE);
+                    viewButton.setClickable(false);
+                    textView.setVisibility(View.GONE);
 
                     // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new ModifyClass());
@@ -161,6 +190,17 @@ public class MainActivity extends AppCompatActivity {
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+                    // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
+                    addButton.setVisibility(View.GONE);
+                    addButton.setClickable(false);
+                    deleteButton.setVisibility(View.GONE);
+                    deleteButton.setClickable(false);
+                    modifyButton.setVisibility(View.GONE);
+                    modifyButton.setClickable(false);
+                    viewButton.setVisibility(View.GONE);
+                    viewButton.setClickable(false);
+                    textView.setVisibility(View.GONE);
+
                     // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new ViewClass());
                     fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
@@ -178,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
