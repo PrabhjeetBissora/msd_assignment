@@ -7,17 +7,78 @@
     tools:context=".ModifyClass">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_width="410dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/names2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="200dp"
+            android:ems="10"
+            android:hint="@string/edit_text_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/names3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="248dp"
+            android:ems="10"
+            android:hint="@string/edit_text_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/names4"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="296dp"
+            android:ems="10"
+            android:hint="@string/edit_text_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.835"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/names5"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="348dp"
+            android:ems="10"
+            android:hint="@string/edit_text_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.835"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/names6"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="396dp"
+            android:ems="10"
+            android:hint="@string/edit_text_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.835"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/add_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_class"
-            app:layout_constraintBottom_toTopOf="@id/textview_first"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,24 +86,69 @@
             android:id="@+id/textview_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="100dp"
             android:text="@string/class_params"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/add_class" />
+            tools:layout_editor_absoluteX="284dp" />
 
         <EditText
             android:id="@+id/names"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="108dp"
+            android:layout_marginTop="152dp"
             android:ems="10"
             android:hint="@string/edit_text_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="137dp"
+            android:layout_height="50dp"
+            android:text="Class code:"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="154dp" />
+
+        <TextView
+            android:id="@+id/className"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
+            android:text="Class name:"
+            tools:layout_editor_absoluteX="-2dp"
+            tools:layout_editor_absoluteY="201dp" />
+
+        <TextView
+            android:id="@+id/classType"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
+            android:text="Class type:"
+            tools:layout_editor_absoluteX="-4dp"
+            tools:layout_editor_absoluteY="247dp" />
+
+        <TextView
+            android:id="@+id/startTime"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
+            android:text="Start time:"
+            tools:layout_editor_absoluteX="-5dp"
+            tools:layout_editor_absoluteY="296dp" />
+
+        <TextView
+            android:id="@+id/endTime"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
+            android:text="End time:"
+            tools:layout_editor_absoluteX="-7dp"
+            tools:layout_editor_absoluteY="343dp" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
+            android:text="Location:"
+            tools:layout_editor_absoluteX="-9dp"
+            tools:layout_editor_absoluteY="388dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
