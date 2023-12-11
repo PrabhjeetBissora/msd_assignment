@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +55,10 @@ public class AddClass extends Fragment {
                 }
             }));
         }
+
+        EditText classCode = (EditText) view.findViewById(R.id.names);
+        String output = classCode.getText().toString();
+        Toast.makeText(requireContext(), output, Toast.LENGTH_LONG).show();
 
         binding.addClass.setOnClickListener(new View.OnClickListener() {
 
