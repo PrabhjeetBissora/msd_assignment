@@ -16,25 +16,23 @@
             android:id="@+id/names"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="84dp"
+            android:layout_marginTop="184dp"
             android:ems="10"
             android:hint="@string/edit_text_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/classCode"
-            app:layout_constraintStart_toStartOf="classCode"
-            app:layout_constraintTop_toBottomOf="@+id/add_class" />
+            app:layout_constraintHorizontal_bias="0.775"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/names2"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="236dp"
             android:ems="10"
             android:hint="@string/edit_text_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintHorizontal_bias="0.775"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,11 +40,11 @@
             android:id="@+id/names3"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="248dp"
+            android:layout_marginTop="276dp"
             android:ems="10"
             android:hint="@string/edit_text_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintHorizontal_bias="0.785"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,11 +52,11 @@
             android:id="@+id/names4"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="296dp"
+            android:layout_marginTop="324dp"
             android:ems="10"
             android:hint="@string/edit_text_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.835"
+            app:layout_constraintHorizontal_bias="0.775"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,25 +64,23 @@
             android:id="@+id/names5"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginTop="364dp"
             android:ems="10"
             android:hint="@string/edit_text_name"
-            app:layout_constraintBottom_toTopOf="@+id/names6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.102"
-            app:layout_constraintStart_toEndOf="@+id/endTime"
-            app:layout_constraintTop_toBottomOf="@+id/names4"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintHorizontal_bias="0.825"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/names6"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="416dp"
+            android:layout_marginTop="412dp"
             android:ems="10"
             android:hint="@string/edit_text_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintHorizontal_bias="0.825"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

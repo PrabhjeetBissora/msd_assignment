@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 plugins {
     id("com.android.application")
 }
@@ -35,6 +37,13 @@ android {
 }
 
 dependencies {
+
+    // retrieved from: https://developer.android.com/training/data-storage/room
+
+    //def room_version = "2.6.1"
+
+    implementation ("androidx.room:room-runtime:2.6.1")
+    annotationProcessor ("androidx.room:room-compiler:2.6.1")
 
 
     implementation("androidx.appcompat:appcompat:1.6.1")
