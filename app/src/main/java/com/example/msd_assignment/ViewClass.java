@@ -1,9 +1,16 @@
+/*
+        fragment that implements view class functionality
+*/
+
 package com.example.msd_assignment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,35 +21,37 @@ import com.example.msd_assignment.databinding.ViewClassBinding;
 
 public class ViewClass extends Fragment {
 
-    private ViewClassBinding binding;
-
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+        View view = inflater.inflate(R.layout.add_class, container, false);
 
-        binding = ViewClassBinding.inflate(inflater, container, false);
-        return binding.getRoot();
+        Button addButton = view.findViewById(R.id.add_class);
+        EditText classNameEditText = view.findViewById(R.id.names);
 
-    }
+        // retrieved from: https://www.tabnine.com/code/java/methods/android.widget.Button/setOnClickListener
+        // assign data to database
+        addButton.setOnClickListener(v ->{
+            // declare and assign attributes to be used in insert statement
+            String className = classNameEditText.getText().toString();
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+            if (!className.isEmpty()){
+                // initialise new Class to use encapsulates
+                ClassEntity classEntity = new ClassEntity();
+                classEntity.setName(className);
 
-        binding.viewClass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(ViewClass.this)
-                        .navigate(R.id.action_ScheduleClass_to_AddClass);
+                // insert into database
+                ClassApplication.classDatabase.classDao().insertClass(classEntity);
+
+                Toast.makeText(requireContext(), "Class added to the database", Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(requireContext(), "Please enter a class name", Toast.LENGTH_LONG).show();
             }
         });
-    }
+        return view;
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
     }
-
 }

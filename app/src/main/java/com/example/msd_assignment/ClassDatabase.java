@@ -1,5 +1,5 @@
 /*
- Class that initialises database
+ Class that defines database
  */
 
 package com.example.msd_assignment;

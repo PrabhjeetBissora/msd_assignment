@@ -1,3 +1,7 @@
+/*
+activity that initialises database for project
+ */
+
 package com.example.msd_assignment;
 
 import android.app.Application;

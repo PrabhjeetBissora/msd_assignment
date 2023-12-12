@@ -1,25 +1,22 @@
+/*
+activity that is initialised at start.  Has four buttons that each lead to their respective fragments
+ */
+
 package com.example.msd_assignment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.View;
 
-import androidx.core.view.WindowCompat;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.example.msd_assignment.databinding.ActivityMainBinding;
 
@@ -28,8 +25,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-// import android.support.design.widget.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,16 +40,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // setSupportActionBar(binding.toolbar);
-
         // retrieved from: https://stackoverflow.com/questions/62061386/illegalargumentexception-id-does-not-reference-a-view-inside-this-activity
-
-//        val navHostFragment =
-//                supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)
-//        as NavHostFragment
-//        // Passing each menu ID as a set of Ids because each
-//        // menu should be considered as top level destinations.
-//        mNavController = navHostFragment.navController
 
         // Find the NavHostFragment
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_container);
@@ -65,16 +51,11 @@ public class MainActivity extends AppCompatActivity {
             NavController navController = navHostFragment.getNavController();
         }
         else{
-            Log.e("MainActivity", "NavHostFragment is null");
+            Log.e("MainActivity", "NavHostFragment is null"); // program crashes
         }
-
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-//        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         // declare title of applictaion
         TextView textView = findViewById(R.id.welcomeTitle);
-        // textView.setText("AbhiAndroid"); //set text for text view
 
         // declare buttons in main page
         Button addButton = findViewById(R.id.addButton);
@@ -101,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                     // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
+                    // switch to next view
                     addButton.setVisibility(View.GONE);
                     addButton.setClickable(false);
                     deleteButton.setVisibility(View.GONE);
@@ -113,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
                     // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new AddClass());
-                    fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
                     fragmentTransaction.commit();
                 }
             }));
@@ -131,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                     // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
+                    // switch to next view
                     addButton.setVisibility(View.GONE);
                     addButton.setClickable(false);
                     deleteButton.setVisibility(View.GONE);
@@ -143,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
 
                     // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new DeleteClass());
-                    fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
                     fragmentTransaction.commit();
                 }
             }));
@@ -161,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                     // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
+                    // switch to next view
                     addButton.setVisibility(View.GONE);
                     addButton.setClickable(false);
                     deleteButton.setVisibility(View.GONE);
@@ -173,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
 
                     // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new ModifyClass());
-                    fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
                     fragmentTransaction.commit();
                 }
             }));
@@ -191,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                     // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
+                    // switch to next view
                     addButton.setVisibility(View.GONE);
                     addButton.setClickable(false);
                     deleteButton.setVisibility(View.GONE);
@@ -203,20 +185,10 @@ public class MainActivity extends AppCompatActivity {
 
                     // Replace the current fragment with AddClass fragment
                     fragmentTransaction.replace(R.id.nav_host_container, new ViewClass());
-                    fragmentTransaction.addToBackStack(null);  // Optional, to add to back stack for fragment navigation
                     fragmentTransaction.commit();
                 }
             }));
         }
-
-//        binding.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAnchorView(R.id.fab)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
 
@@ -241,18 +213,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    // go to add class page. Retrieved from: https://www.youtube.com/watch?v=bgIUdb-7Rqo
-    public void openAddActivity() {
-        //Toast.makeText((Context) MainActivity.this, "You just clicked on Add Button", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, AddClass.class);
-        startActivity(intent);
-    }
-
-//    @Override
-//    public boolean onSupportNavigateUp() {
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-//        return NavigationUI.navigateUp(navController, appBarConfiguration)
-//                || super.onSupportNavigateUp();
-//    }
 }
