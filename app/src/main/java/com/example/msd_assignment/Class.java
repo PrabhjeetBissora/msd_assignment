@@ -1,10 +1,50 @@
 package com.example.msd_assignment;
 
-public class Class {
-    public String code;
-    public String name;
-    public String type;
-    public String startTime;
-    public String endTime;
+public class Class { // using encapsulation
+    public String getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    private String code;
+    private String name;
+    private String type;
+    private String startTime;
+    private String endTime;
 
 }
