@@ -41,6 +41,16 @@ public class Class { // using encapsulation
         this.endTime = endTime;
     }
 
+    // constructor
+
+    public Class(String code, String name, String type, String startTime, String endTime) {
+        this.code = code;
+        this.name = name;
+        this.type = type;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
     private String code;
     private String name;
     private String type;

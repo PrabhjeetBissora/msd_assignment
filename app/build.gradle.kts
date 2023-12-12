@@ -39,10 +39,9 @@ android {
 dependencies {
 
     // retrieved from: https://developer.android.com/training/data-storage/room
-
-    // def room_version = "2.6.1"
-
+    // retrieve room classes
     implementation ("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-common:2.6.1")
     annotationProcessor ("androidx.room:room-compiler:2.6.1")
 
 

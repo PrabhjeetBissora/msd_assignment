@@ -48,7 +48,7 @@ public class AddClass extends Fragment {
         if (addButton != null) {
             addButton.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
                 public void onClick(View it) {
-                    // dis
+                    // display button
                     // playing a toast message - using requireContext() instead of typecasting Context
                     Toast.makeText(requireContext(), "You just clicked on Add Button", Toast.LENGTH_LONG).show();
 //                    NavHostFragment.findNavController(AddClass.this)
