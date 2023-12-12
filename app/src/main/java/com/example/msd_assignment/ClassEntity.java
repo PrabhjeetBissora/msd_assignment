@@ -1,6 +1,21 @@
+/*
+ class that contains parameters of Class
+ */
+
 package com.example.msd_assignment;
 
-public class Class { // using encapsulation
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
+public class ClassEntity {
+
+    // constructor for 0 args passed
+    public ClassEntity() {
+
+    }
+    // using encapsulation
     public String getCode() {
         return code;
     }
@@ -43,7 +58,7 @@ public class Class { // using encapsulation
 
     // constructor
 
-    public Class(String code, String name, String type, String startTime, String endTime) {
+    public ClassEntity(String code, String name, String type, String startTime, String endTime) {
         this.code = code;
         this.name = name;
         this.type = type;
@@ -51,6 +66,8 @@ public class Class { // using encapsulation
         this.endTime = endTime;
     }
 
+    @PrimaryKey
+    @NonNull
     private String code;
     private String name;
     private String type;
