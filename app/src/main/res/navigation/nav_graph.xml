@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_MainActivity_to_AddClass"
             app:destination="@id/AddClass" />
+        <action
+            android:id="@+id/action_MainActivity_to_ViewClass"
+            app:destination="@id/ViewClass" />
     </fragment>
     <fragment
         android:id="@+id/AddClass"
@@ -38,8 +41,8 @@
         android:id="@+id/ViewClass"
         android:label="@string/view_class_label">
         <action
-            android:id="@+id/action_ScheduleClass_to_AddClass"
-            app:destination="@id/AddClass" />
+            android:id="@+id/action_ViewClass_to_Main"
+            app:destination="@id/ViewClass" />
     </fragment>
 
 </navigation>
