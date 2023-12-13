@@ -56,15 +56,23 @@ public class ClassEntity {
         this.endTime = endTime;
     }
 
-    // constructor
-
-    public ClassEntity(String code, String name, String type, String startTime, String endTime) {
-        this.code = code;
-        this.name = name;
-        this.type = type;
-        this.startTime = startTime;
-        this.endTime = endTime;
+    public String getLocation() {
+        return location;
     }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    // variables
 
     @PrimaryKey
     @NonNull
@@ -73,5 +81,19 @@ public class ClassEntity {
     private String type;
     private String startTime;
     private String endTime;
+    private String location;
+    private String date;
+
+    // constructor
+
+    public ClassEntity(@NonNull String code, String name, String type, String startTime, String endTime, String location, String date) {
+        this.code = code;
+        this.name = name;
+        this.type = type;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.location = location;
+        this.date = date;
+    }
 
 }

@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
         classDatabase = Room.databaseBuilder(getApplicationContext(), ClassDatabase.class, "ClassDB")
                 .addCallback(myCallBack)
-                .allowMainThreadQueries()
+                .allowMainThreadQueries() // can run in main
+                .fallbackToDestructiveMigration() // to allow for version switches
                 .build();
 
         // retrieved from: https://stackoverflow.com/questions/62061386/illegalargumentexception-id-does-not-reference-a-view-inside-this-activity
@@ -139,14 +140,6 @@ public class MainActivity extends AppCompatActivity {
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                    ClassEntity c1 = new ClassEntity();
-                    ClassEntity c2 = new ClassEntity();
-                    c1.setCode("CMPU2022");
-                    c2.setCode("LLLLOLLL");
-
-                    classDatabase.getClassDao().insertClass(c1);
-                    classDatabase.getClassDao().insertClass(c2);
-
                     // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
                     // switch to next view
 //                    addButton.setVisibility(View.GONE);
@@ -160,8 +153,8 @@ public class MainActivity extends AppCompatActivity {
 //                    textView.setVisibility(View.GONE);
 
                     // Replace the current fragment with AddClass fragment
-//                    fragmentTransaction.replace(R.id.nav_host_container, new DeleteClass());
-//                    fragmentTransaction.commit();
+                    fragmentTransaction.replace(R.id.nav_host_container, new DeleteClass());
+                    fragmentTransaction.commit();
                 }
             }));
         }
@@ -191,8 +184,8 @@ public class MainActivity extends AppCompatActivity {
                     textView.setVisibility(View.GONE);
 
                     // Replace the current fragment with AddClass fragment
-//                    fragmentTransaction.replace(R.id.nav_host_container, new ModifyClass());
-//                    fragmentTransaction.commit();
+                    fragmentTransaction.replace(R.id.nav_host_container, new ModifyClass());
+                    fragmentTransaction.commit();
                 }
             }));
         }
@@ -212,35 +205,18 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.e("MainActivity", "line2");
 
-//                    List<ClassEntity> classList = classDatabase.getClassDao().getAllClasses();
-//
-//                    StringBuilder sb = new StringBuilder();
-//                    for(ClassEntity c : classList){
-//                        sb.append(c.getCode());
-//                        sb.append("\n");
-//                    }
-//                    String output = sb.toString();
-//                    Toast.makeText((Context) MainActivity.this, output, Toast.LENGTH_LONG).show();
+                    List<ClassEntity> classList = classDatabase.getClassDao().getAllClasses();
 
-                    // retrieved from: https://stackoverflow.com/questions/52037634/making-a-button-disappear-after-clicking-another-button
-                    // switch to next view
-                    addButton.setVisibility(View.GONE);
-                    addButton.setClickable(false);
-                    deleteButton.setVisibility(View.GONE);
-                    deleteButton.setClickable(false);
-                    modifyButton.setVisibility(View.GONE);
-                    modifyButton.setClickable(false);
-                    viewButton.setVisibility(View.GONE);
-                    viewButton.setClickable(false);
-                    textView.setVisibility(View.GONE);
+                    // retrieved from: https://www.youtube.com/watch?v=ChD4GkS5Kds
+                    StringBuilder sb = new StringBuilder();
+                    for(ClassEntity c : classList){
+                        sb.append(c.getCode() + ", " + c.getName() + ", " + c.getType() + ", " + c.getLocation() +
+                                ", " + c.getDate() + ", " + c.getStartTime() + ", " + c.getEndTime());
+                        sb.append("\n");
+                    }
+                    String output = sb.toString();
+                    Toast.makeText((Context) MainActivity.this, output, Toast.LENGTH_LONG).show();
 
-                    Log.e("MainActivity", "line3");
-
-                    // Replace the current fragment with AddClass fragment
-                    fragmentTransaction.replace(R.id.nav_host_container, new ViewClass());
-
-                    Log.e("MainActivity", "line4");
-                    fragmentTransaction.commit();
                 }
             }));
         }
